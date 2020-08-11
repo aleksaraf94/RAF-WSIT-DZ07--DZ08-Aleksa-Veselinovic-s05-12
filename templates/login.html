@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        ul li{
+        display: inline-block;
+        }
+    </style>
+</head>
+<body>
+{{odg}}
+<form action="/logovanje" method="post">
+    <ul>
+        <li><a href="/">pocetna</a> </li>
+        <li><a href="/register">register</a> </li>
+        <li><a href="/login">login</a> </li>
+        <li><a href="/logout">logout</a> </li>
+        <li><a href="/dodaj-proizvod">/dodaj-proizvod</a> </li>
+        <li><a href="/administracija">administracija</a></li>
+    </ul>
+    <table>
+        <tr>
+            <td>
+                <label for="korime">korisnicko ime:</label>
+            </td>
+            <td>
+                <input type="text" id="korime" name="korime">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="password">lozinka: </label>
+            </td>
+            <td>
+                <input type="password" id="password" name="password">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">uloguj se</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

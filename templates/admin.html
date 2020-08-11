@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        ul li{
+        display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<ul>
+        <li><a href="/">pocetna</a> </li>
+        <li><a href="/register">register</a> </li>
+        <li><a href="/login">login</a> </li>
+        <li><a href="/logout">logout</a> </li>
+        <li><a href="/dodaj-proizvod">/dodaj-proizvod</a> </li>
+        <li><a href="/administracija">administracija</a></li>
+    </ul>
+
+{% for i in korisnici%}
+
+
+<form action="/izmeniKorisnika" method="post">
+    <p>id: {{i[0]}}</p>
+    <input type="hidden" name="id" value="{{i[0]}}">
+    <p>korisnicko ime: <input type="text" name="korime" value="{{i[1]}}" ></p>
+    <p>email: <input type="text" name="email" value="{{i[2]}}" ></p>
+    <p>pol: {{i[4]}}</p>
+    <p>godina: <input type="text" name="godina" value="{{i[5]}}" ></p>
+    <p>tip: <input type="text" name="tip" value="{{i[6]}}" ></p>
+    <button type="submit">izmeni</button>
+</form>
+
+<form action="/obrisiKorisnika" method="post">
+    <input type="hidden" name="id" value="{{i[0]}}">
+    <button type="submit">Obrisi</button>
+</form>
+<hr>
+{% endfor %}
+
+</body>
+</html>

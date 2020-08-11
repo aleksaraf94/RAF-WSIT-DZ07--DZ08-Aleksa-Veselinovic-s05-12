@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        ul li{
+        display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<ul>
+ <li><a href="/">pocetna</a> </li>
+        <li><a href="/register">register</a> </li>
+        <li><a href="/login">login</a> </li>
+        <li><a href="/logout">logout</a> </li>
+        <li><a href="/dodaj-proizvod">/dodaj-proizvod</a> </li>
+    <li><a href="/administracija">administracija</a></li>
+    </ul>
+{{odg}}
+
+
+
+{% for i in lista %}
+    <h1>Naziv: {{ i[1] }}</h1>
+    <p>Cena: {{i[2]}}</p>
+    <p>Slika: {{i[4]}}</p>
+    <p>Kolicina: {{i[3]}}</p>
+    <form action="/deleteProizvod" method="post">
+        <input type="hidden" name="id" value="{{i[0]}}">
+        <input type="submit" value="obrisi">
+    </form>
+    <a href="/updateProizvod/{{i[0]}}">Update</a>
+
+{% endfor %}
+</body>
+</html>
